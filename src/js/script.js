@@ -17,7 +17,7 @@ let numeroRequisicao = parseInt(strRequisicao);
 
 statusErro(statusCode);
 
-console.log('Número Requisicao: ' + numeroRequisicao);
+//console.log('Número Requisicao: ' + numeroRequisicao);
 
 /*
 Aqui em preencheZero, Loop para reconhecer o que o usuário digitou e retornar 
