@@ -16,15 +16,15 @@ async function myRequsicao() {
     try {
         const dataRequisicao = await myPromise();
 
-        console.log(dataRequisicao);
+        // console.log(dataRequisicao);
 
         let display1 = document.getElementById('display-1');
         let display2 = document.getElementById('display-2');
         let display3 = document.getElementById('display-3');
         let numeroRequisicao = dataRequisicao.value;
 
-        console.log(typeof (numeroRequisicao))
-        console.log(numeroRequisicao);
+        // console.log(typeof (numeroRequisicao))
+        // console.log(numeroRequisicao);
 
         numeroRequisicao ? console.log('Valor: ' + numeroRequisicao) : statusErro(502)
 
@@ -115,8 +115,8 @@ async function myRequsicao() {
         */
 
         function statusErro(statusValue) {
-            // Null ou Undefined 502
-            console.log(`Entrou na função 'statusErro': ${statusValue}`);
+            // console.log(`Entrou na função 'statusErro': ${statusValue}`);
+
             if (statusValue) {
 
                 resultado.innerHTML = '<span style="color:#CC3300">ERRO</span>';
