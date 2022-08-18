@@ -49,7 +49,7 @@ async function myRequsicao() {
         };
 
         // Para evitar que o usuário envie entrada com um campo vazio.
-        document.body.querySelector('#palpite').addEventListener('input', function () {
+        await document.body.querySelector('#palpite').addEventListener('input', function () {
 
             var habilitaBotao = document.getElementById('enviar');
 
@@ -65,6 +65,50 @@ async function myRequsicao() {
         verificar o número que o usuário enviou está correto ou se é maior ou menor.
         */
 
+        // Original input do usuário
+
+        document.getElementById('enviar').addEventListener("click", function (evento) {
+            evento.preventDefault();
+
+            const palpite = document.querySelector('#palpite');
+
+            const valor = preencheZero(palpite.value);
+
+            let formaNumero = 'conteudo-principal-display display-num-';
+
+            display1.className = formaNumero + valor[0];
+            display2.className = formaNumero + valor[1];
+            display3.className = formaNumero + valor[2];
+
+            // Mostra ou ocultar segmento
+
+            if (valor.length == 1) {
+                document.getElementById('display-2').style.display = 'none';
+                document.getElementById('display-3').style.display = 'none';
+            } else if (valor.length == 2) {
+                document.getElementById('display-2').style.display = 'block';
+                document.getElementById('display-3').style.display = 'none';
+            } else {
+                document.getElementById('display-2').style.display = 'block';
+                document.getElementById('display-3').style.display = 'block';
+            };
+
+            // Resultado do palpite
+            if (numeroRequisicao > valor) {
+                document.getElementById('resultado').style.visibility = 'visible';
+                resultado.innerHTML = 'É maior';
+            } else if (numeroRequisicao < valor) {
+                document.getElementById('resultado').style.visibility = 'visible';
+                resultado.innerText = 'É menor';
+            } else {
+                resultado.innerHTML = '<span style="color:#32BF00">Você acertou!!!!</span>';
+                alteraCor('Verde');
+                desabilitaInput();
+            };
+
+        });
+
+        /*
         //Teste para o Botão Enter fisico
 
         document.addEventListener("keypress", function (evento) {
@@ -111,50 +155,7 @@ async function myRequsicao() {
             }
 
         });
-
-        // Original input do usuário
-
-        document.getElementById('enviar').addEventListener("click", function (evento) {
-            evento.preventDefault();
-
-            const palpite = document.querySelector('#palpite');
-
-            const valor = preencheZero(palpite.value);
-
-            let formaNumero = 'conteudo-principal-display display-num-';
-
-            display1.className = formaNumero + valor[0];
-            display2.className = formaNumero + valor[1];
-            display3.className = formaNumero + valor[2];
-
-            // Mostra ou ocultar segmento
-
-            if (valor.length == 1) {
-                document.getElementById('display-2').style.display = 'none';
-                document.getElementById('display-3').style.display = 'none';
-            } else if (valor.length == 2) {
-                document.getElementById('display-2').style.display = 'block';
-                document.getElementById('display-3').style.display = 'none';
-            } else {
-                document.getElementById('display-2').style.display = 'block';
-                document.getElementById('display-3').style.display = 'block';
-            };
-
-            // Resultado do palpite
-            if (numeroRequisicao > valor) {
-                document.getElementById('resultado').style.visibility = 'visible';
-                resultado.innerHTML = 'É maior';
-            } else if (numeroRequisicao < valor) {
-                document.getElementById('resultado').style.visibility = 'visible';
-                resultado.innerText = 'É menor';
-            } else {
-                resultado.innerHTML = '<span style="color:#32BF00">Você acertou!!!!</span>';
-                alteraCor('Verde');
-                desabilitaInput();
-            };
-
-        });
-
+        */
 
         /* 
         Função caso ocorra o erro de solicitação. será verificado em localStorge o 
