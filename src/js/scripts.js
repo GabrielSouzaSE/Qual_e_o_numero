@@ -65,11 +65,13 @@ async function myRequsicao() {
         verificar o número que o usuário enviou está correto ou se é maior ou menor.
         */
 
-        //Teste
+        //Teste para o Botão Enter fisico
         
         document.addEventListener("keypress", function (evento) {
+            
             if (evento.key === "Enter") {
                 evento.preventDefault();
+                enviar.click();
 
                 const palpite = document.querySelector('#palpite');
 
@@ -110,7 +112,7 @@ async function myRequsicao() {
 
         });
 
-        // Original
+        // Original input do usuário
 
         document.getElementById('enviar').addEventListener("click", function (evento) {
             evento.preventDefault();
