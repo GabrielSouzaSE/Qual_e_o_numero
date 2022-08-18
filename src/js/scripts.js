@@ -25,9 +25,7 @@ async function myRequsicao() {
 
         // console.log(typeof (numeroRequisicao))
         // console.log(numeroRequisicao);
-
-        numeroRequisicao ? console.log('Valor: ' + numeroRequisicao) : statusErro(502)
-
+        numeroRequisicao ? numeroRequisicao : statusErro(502);
         /*
         Aqui em preencheZero, Loop para reconhecer o que o usuário digitou e retornar 
         uma string para ser usada posteriormente para formar os números em 7 segmentos.
@@ -37,8 +35,7 @@ async function myRequsicao() {
                 string = '0' + string;
             }
             return string;
-        }
-
+        };
         /*
         Aqui, não ter a possibilidade de enviar números negativos e limitar o input 
         de até 3 dígitos.
@@ -81,6 +78,7 @@ async function myRequsicao() {
             display3.className = formaNumero + valor[2];
 
             // Mostra ou ocultar segmento
+
             if (valor.length == 1) {
                 document.getElementById('display-2').style.display = 'none';
                 document.getElementById('display-3').style.display = 'none';
@@ -115,8 +113,7 @@ async function myRequsicao() {
         */
 
         function statusErro(statusValue) {
-            // console.log(`Entrou na função 'statusErro': ${statusValue}`);
-
+            console.log(`Entrou na função 'statusErro': ${statusValue}`);
             if (statusValue) {
 
                 resultado.innerHTML = '<span style="color:#CC3300">ERRO</span>';
@@ -196,7 +193,7 @@ async function myRequsicao() {
         };
         //se acontece um erro
     } catch (error) {
-        console.log(`Erro 2: ${error}`)
+        console.log(`Erro 2: ${error}`);
     }
 }
 
