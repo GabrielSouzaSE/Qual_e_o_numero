@@ -64,44 +64,48 @@ async function myRequsicao() {
         caso seja introduzido mais de 1 digito, e a estrutura de seleção para 
         verificar o número que o usuário enviou está correto ou se é maior ou menor.
         */
-        document.getElementById('enviar').addEventListener("click", function (evento) {
-            evento.preventDefault();
+        document.getElementById('enviar').addEventListener("keypress", function (evento) {
+            if (evento.key === "Enter") {
+                evento.preventDefault();
 
-            const palpite = document.querySelector('#palpite');
+                const btn = document.querySelector("#enviar");
+                btn.click();
+                const palpite = document.querySelector('#palpite');
 
-            const valor = preencheZero(palpite.value);
+                const valor = preencheZero(palpite.value);
 
-            let formaNumero = 'conteudo-principal-display display-num-';
+                let formaNumero = 'conteudo-principal-display display-num-';
 
-            display1.className = formaNumero + valor[0];
-            display2.className = formaNumero + valor[1];
-            display3.className = formaNumero + valor[2];
+                display1.className = formaNumero + valor[0];
+                display2.className = formaNumero + valor[1];
+                display3.className = formaNumero + valor[2];
 
-            // Mostra ou ocultar segmento
+                // Mostra ou ocultar segmento
 
-            if (valor.length == 1) {
-                document.getElementById('display-2').style.display = 'none';
-                document.getElementById('display-3').style.display = 'none';
-            } else if (valor.length == 2) {
-                document.getElementById('display-2').style.display = 'block';
-                document.getElementById('display-3').style.display = 'none';
-            } else {
-                document.getElementById('display-2').style.display = 'block';
-                document.getElementById('display-3').style.display = 'block';
-            };
+                if (valor.length == 1) {
+                    document.getElementById('display-2').style.display = 'none';
+                    document.getElementById('display-3').style.display = 'none';
+                } else if (valor.length == 2) {
+                    document.getElementById('display-2').style.display = 'block';
+                    document.getElementById('display-3').style.display = 'none';
+                } else {
+                    document.getElementById('display-2').style.display = 'block';
+                    document.getElementById('display-3').style.display = 'block';
+                };
 
-            // Resultado do palpite
-            if (numeroRequisicao > valor) {
-                document.getElementById('resultado').style.visibility = 'visible';
-                resultado.innerHTML = 'É maior';
-            } else if (numeroRequisicao < valor) {
-                document.getElementById('resultado').style.visibility = 'visible';
-                resultado.innerText = 'É menor';
-            } else {
-                resultado.innerHTML = '<span style="color:#32BF00">Você acertou!!!!</span>';
-                alteraCor('Verde');
-                desabilitaInput();
-            };
+                // Resultado do palpite
+                if (numeroRequisicao > valor) {
+                    document.getElementById('resultado').style.visibility = 'visible';
+                    resultado.innerHTML = 'É maior';
+                } else if (numeroRequisicao < valor) {
+                    document.getElementById('resultado').style.visibility = 'visible';
+                    resultado.innerText = 'É menor';
+                } else {
+                    resultado.innerHTML = '<span style="color:#32BF00">Você acertou!!!!</span>';
+                    alteraCor('Verde');
+                    desabilitaInput();
+                };
+            }
 
         });
 
