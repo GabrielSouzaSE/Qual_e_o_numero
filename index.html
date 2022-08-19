@@ -7,14 +7,9 @@
     <link rel="stylesheet" href="src/css/styles.css">
     <title>Qual é o número?</title>
 </head>
-<!-- Iniciando o corpo da aplicação -->
 
 <body>
-    <!-- a classe "container" que conterá todo o corpo do meu aplicativo, 
-        desde o cabeçalho até a parte de entrada do usuário -->
     <div class="container">
-        <!-- Aqui, no cabecalho é onde vai conter o título e a linha de 
-            divisão entre o cabeçalho e o conteúdo -->
         <header class="cabecalho">
             <h1 class="cabecalho-titulo">qual é o número?</h1>
             <div class="cabecalho-linha"></div>
@@ -23,14 +18,7 @@
             <div class="conteudo-resultado">
                 <p class="conteudo-resultado-paragrafo" id="resultado">
                     resultado</p>
-            </div> <!-- .conteudo-resultado-->
-
-            <!-- Aqui, no conteúdo, você terá a resposta visual para o usuário
-                da classe "conteudo-resultado-paragrafo", se foi maior ou menor
-                ou se acertou ou se houve erro na requisição. Também terá a
-                classe os segmentos do display("conteudo-principal-container"),
-                cada display é identificado de 1 a 3 com sete segmentos em 
-                cada, em ordem alfabética de A a G. -->
+            </div>
             <div class="conteudo-principal">
                 <div class="conteudo-principal-container">
                     <div id="display-1" class="conteudo-principal-display 
@@ -43,7 +31,7 @@
                         <div class="segmento-f"></div>
                         <div class="segmento-g"><span class="segmento-reflexo">
                             </span></div>
-                    </div> <!-- #display-1 .conteudo-principal-display .display-num-0-->
+                    </div>
                     <div id="display-2" class="conteudo-principal-display
                      display-num-1">
                         <div class="segmento-a"></div>
@@ -54,7 +42,7 @@
                         <div class="segmento-f"></div>
                         <div class="segmento-g"><span class="segmento-reflexo">
                             </span></div>
-                    </div> <!-- #display-2 .conteudo-principal-display .display-num-1-->
+                    </div>
                     <div id="display-3" class="conteudo-principal-display
                      display-num-2">
                         <div class="segmento-a"></div>
@@ -65,29 +53,24 @@
                         <div class="segmento-f"></div>
                         <div class="segmento-g"><span class="segmento-reflexo">
                             </span></div>
-                    </div> <!-- #display-3 .conteudo-principal-display .display-num-2-->
-                </div> <!-- .conteudo-principal-container-->
-            </div> <!-- .conteudo-principal-->
-
-            <!-- Aqui, Botão de nova partida -->
+                    </div>
+                </div>
+            </div>
             <div class="conteudo-nova-partida">
                 <button id="nova-partida" class="conteudo-nova-partida-botao">
                 </button>
             </div>
-            <!--conteudo-nova-partida-->
-
             <div class="conteudo-usuario">
                 <div class="conteudo-usuario-palpite">
                     <input class="conteudo-usuario-palpite-input" type="number" min="0" max="300" name="palpite"
                         id="divination" placeholder="Digite o palpite" />
                     <input class="conteudo-usuario-palpite-botao" type="submit" id="enviar" value="enviar"
                         disabled></input>
-                </div> <!-- .conteudo-usuario-palpite-->
-            </div> <!-- .conteudo-usuario-->
-        </main> <!-- .conteudo-->
-    </div> <!-- .container-->
+                </div>
+            </div>
+        </main>
+    </div>
     <script type="text/javascript" src="src/js/scripts.js"></script>
 </body>
 
 </html>
-<!-- browser-sync start --server -- files "*.html *.css *.js" -->
