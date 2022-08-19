@@ -1,45 +1,20 @@
-/*
-A princípio, importei as fontes usadas no aplicativo conforme visto na figma,
-usei a fonte MONTSERRAT para o título, no parágrafo de resultado e no 
-botão de input. E ROBOTO na parte de entrada do usuário.
-*/
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Roboto&display=swap');
 
-/* 
-Aqui, usei a definição "Reset CSS genérica" para remover os estilos padrão que 
-foram injetados pelo navegador. Inicialmente, todos os elementos ficarão 
-sem bordas e sem preenchimento.
-*/
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* 
-Color de fundo da aplicação.
-*/
 body {
     background: #FFFFFF;
 }
 
-/* 
-Aqui nesta classe "container" que irá englobar todos os elementos disponíveis
-na aplicação. Posicionei todo o conteúdo no centro usando a posição relativa 
-para ter a liberdade de posicionar o conteúdo na página e com margem no auto 
-tornando o conteúdo centralizado.
-*/
 .container {
     position: relative;
     margin: auto;
 }
 
-/* 
-Para esta classe, adicionei display:flex, para organizar os itens filhos 
-em ordem vertical com flex-direction no modo de coluna. Para centralizar os 
-itens foi align-items e para distanciar os itens do topo do site usei margin-top
-e para separar os itens uns dos outros pelo gap.
-*/
 .cabecalho {
     display: flex;
     flex-direction: column;
@@ -48,10 +23,6 @@ e para separar os itens uns dos outros pelo gap.
     gap: 5px;
 }
 
-
-/* 
-Atribui informações do figma, utilizando a fonte Montserrat.
-*/
 .cabecalho-titulo {
     color: #EF6C00;
     font-family: 'Montserrat', sans-serif;
@@ -61,9 +32,6 @@ Atribui informações do figma, utilizando a fonte Montserrat.
     text-transform: uppercase;
 }
 
-/* 
-Criação da linha de separação para a classe de cabeçalho e a classe de conteúdo.
-*/
 .cabecalho-linha {
     width: 205px;
     height: 1px;
@@ -71,32 +39,20 @@ Criação da linha de separação para a classe de cabeçalho e a classe de cont
     transform: matrix(1, 0, 0, -1, 0, 0);
 }
 
-/* 
-Para itens da classe "conteudo" serem posicionados verticalmente e centralizados.
-*/
 .conteudo {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-/* 
-Para o resultado, fica invisível no início da aplicação.
-*/
 #resultado {
     visibility: hidden;
 }
 
-/* 
-Distância do final da classe de cabeçalho até o início da classe de conteúdo. 
-*/
 .conteudo-resultado {
     margin-top: 90px;
 }
 
-/* 
-Atribuir informações do figma, utilizando a fonte Montserrat.
-*/
 .conteudo-resultado-paragrafo {
     color: #EF6C00;
     font-family: 'Montserrat', sans-serif;
@@ -105,17 +61,10 @@ Atribuir informações do figma, utilizando a fonte Montserrat.
     letter-spacing: -1px;
 }
 
-/* 
-Iniciando segmentos 
-*/
 .conteudo-principal {
     margin-top: 16px;
 }
 
-/* 
-Aqui, deixei a posição relativa e os objetos dentro dessa classe estão 
-flutuando à esquerda, organizando assim a ordem das exibições do display.
-*/
 .conteudo-principal-display {
     position: relative;
     float: left;
@@ -123,13 +72,6 @@ flutuando à esquerda, organizando assim a ordem das exibições do display.
     height: 125px;
 }
 
-/* 
-Aqui, o identificador do display 2 e display 3 são definidos como "none" 
-para ocultar os displays, mas quando o usuário insere um valor acima de 
-um dígitos, no arquivo script.js, há uma estrutura de seleção que irá 
-transformar este display "none" em "block" dependendo de quantos dígitos 
-o usuário insere na entrada com um máximo de 3 dígitos.
-*/
 #display-2 {
     display: none;
 }
@@ -138,24 +80,6 @@ o usuário insere na entrada com um máximo de 3 dígitos.
     display: none;
 }
 
-/*
-A criação do segmento  foi utilizado a criação de uma borda com as 
-especificações de largura e comprimento no figma. pesquisando o 
-funcionamento o display de 7 segmentos. no caso esse display ele 
-funciona com que cada barra de LED do segmento corresponde a uma 
-letra e com isso. eu fui desenvolvendo barra por barra de LED da 
-Barra A até a Barra G, sendo que na Barra G para o design ficar 
-igual ao que foi passado na prova. tive que cria um reflexo da 
-Barra G. sendo que barra A, G e D são horizontais e barra B, C, 
-E  e F verticais.
-
-Como a classe "conteúdo-principal-display" é uma posição relativa, 
-usei isso para minha vantagem para adicionar a posição absoluta a 
-cada barra e, assim, posicionar barra por barra para criar o LED 
-em forma de oito.
-*/
-
-/* Parte superior, segmento-a  */
 .conteudo-principal-display .segmento-a {
     width: 68.48px;
     left: 0px;
@@ -163,11 +87,9 @@ em forma de oito.
     border-left: 15px solid transparent;
     border-right: 15px solid transparent;
     border-radius: 8px;
-    /* Posição dos segmentos */
     top: 0;
 }
 
-/* Parte inferior, segmento-d  */
 .conteudo-principal-display .segmento-d {
     position: absolute;
     margin-top: -15px;
@@ -177,11 +99,9 @@ em forma de oito.
     border-left: 15px solid transparent;
     border-right: 15px solid transparent;
     border-radius: 8px;
-    /* Posição dos segmentos */
     top: 127px;
 }
 
-/* Parte meio, segmento-g  */
 .conteudo-principal-display .segmento-g {
     position: absolute;
     margin-top: -14px;
@@ -190,11 +110,9 @@ em forma de oito.
     border-bottom: 11px solid #262A34;
     border-left: 12px solid transparent;
     border-right: 12px solid transparent;
-    /* Posição dos segmentos */
     top: 66.25px;
 }
 
-/* Parte meio, reflexo do segmento-g  */
 .conteudo-principal-display .segmento-g .segmento-reflexo {
     position: absolute;
     top: 11px;
@@ -205,7 +123,6 @@ em forma de oito.
     border-right: 12px solid transparent;
 }
 
-/* Parte superior a direita, reflexo do segmento-b  */
 .conteudo-principal-display .segmento-b {
     position: absolute;
     height: 63.39px;
@@ -214,12 +131,10 @@ em forma de oito.
     border-top: 15px solid transparent;
     border-bottom: 15px solid transparent;
     border-radius: 8px;
-    /* Posição dos segmentos */
     top: 1.5px;
     left: 54px;
 }
 
-/* Parte inferior a direita, reflexo do segmento-c  */
 .conteudo-principal-display .segmento-c {
     position: absolute;
     height: 63.39px;
@@ -228,12 +143,10 @@ em forma de oito.
     border-top: 15px solid transparent;
     border-bottom: 15px solid transparent;
     border-radius: 8px;
-    /* Posição dos segmentos */
     top: 62px;
     left: 54px;
 }
 
-/* Parte inferior a esquerda, reflexo do segmento-e  */
 .conteudo-principal-display .segmento-e {
     position: absolute;
     height: 63.39px;
@@ -241,12 +154,10 @@ em forma de oito.
     border-top: 15px solid transparent;
     border-bottom: 15px solid transparent;
     border-radius: 8px;
-    /* Posição dos segmentos */
     top: 62px;
     left: -1px;
 }
 
-/* Parte superior a esquerda, reflexo do segmento-f  */
 .conteudo-principal-display .segmento-f {
     position: absolute;
     height: 63.39px;
@@ -254,23 +165,14 @@ em forma de oito.
     border-top: 15px solid transparent;
     border-bottom: 15px solid transparent;
     border-radius: 8px;
-    /* Posição dos segmentos */
     top: 1.5px;
     left: -1px;
 }
 
-/* 
-Opacidade dos segmentos para a formação dos números.
-
-Formar o número 0
- */
 .display-num-0 .segmento-g {
     opacity: 0.1;
 }
 
-/* 
-Formar o número 1 
-*/
 .display-num-1 .segmento-a,
 .display-num-1 .segmento-d,
 .display-num-1 .segmento-e,
@@ -280,49 +182,31 @@ Formar o número 1
     filter: alpha(opacity=10);
 }
 
-/* 
-Formar o número 2 
-*/
 .display-num-2 .segmento-c,
 .display-num-2 .segmento-f {
     opacity: 0.1;
 }
 
-/* 
-Formar o número 3
-*/
 .display-num-3 .segmento-e,
 .display-num-3 .segmento-f {
     opacity: 0.1;
 }
 
-/* 
-Formar o número 4 
-*/
 .display-num-4 .segmento-a,
 .display-num-4 .segmento-d,
 .display-num-4 .segmento-e {
     opacity: 0.1;
 }
 
-/* 
-Formar o número 5 
-*/
 .display-num-5 .segmento-b,
 .display-num-5 .segmento-e {
     opacity: 0.1;
 }
 
-/* 
-Formar o número 6 
-*/
 .display-num-6 .segmento-b {
     opacity: 0.1;
 }
 
-/* 
-Formar o número 7 
-*/
 .display-num-7 .segmento-d,
 .display-num-7 .segmento-e,
 .display-num-7 .segmento-f,
@@ -330,37 +214,19 @@ Formar o número 7
     opacity: 0.1;
 }
 
-/* 
-Formação para o número 8, não a necessidade porque o número ocupa todos os segmentos 
-*/
-
-/* 
-Formar o número 9 
-*/
 .display-num-9 .segmento-e {
     opacity: 0.1;
 }
 
-/* 
-Botão nova partida 
-
-Distância do final da classe de conteudo-principal até o início da classe de conteudo-nova-partida. 
-*/
 .conteudo-nova-partida {
     margin-top: 56px;
     display: block;
 }
 
-/* 
-Para o botão Nova Partida, fica invisível no início da aplicação.
-*/
 #nova-partida {
     visibility: hidden;
 }
 
-/* 
-Atribuir informações do figma, utilizando a imagem disponibilizada.
-*/
 .conteudo-nova-partida-botao {
     padding: 0;
     margin: 0;
@@ -372,23 +238,11 @@ Atribuir informações do figma, utilizando a imagem disponibilizada.
     background-size: cover;
 }
 
-/* 
-Input do usuario 
-
-Distância do final da classe de conteudo-nova-partida até o início da 
-classe de conteudo-usuario e posteriomente do final da classe conteudo-usuario 
-com margem para baixo. 
-*/
 .conteudo-usuario {
     margin-top: 73px;
     margin-bottom: 31px;
 }
 
-/* 
-Para esta classe, adicionei display:flex, para organizar os itens filhos 
-em ordem horizontal. Para centralizar os itens foi align-items e para 
-separar os itens uns dos outros usei space-around.
-*/
 .conteudo-usuario-palpite {
     display: flex;
     width: 298px;
@@ -397,9 +251,6 @@ separar os itens uns dos outros usei space-around.
     align-items: center;
 }
 
-/* 
-Edição da caixa de input .
-*/
 .conteudo-usuario-palpite-input {
     width: 214px;
     height: 42px;
@@ -409,18 +260,11 @@ Edição da caixa de input .
     padding-left: 8px;
 }
 
-/* 
-Realçar borda na hora que o usuário digitar.
-*/
 .conteudo-usuario-palpite-input:focus {
     outline: none;
     border: 1px solid #EF6C00;
 }
 
-/* 
-Editar o "placeholder" conforme o documento e o figma, utilizando a fonte 
-Roboto.
-*/
 .conteudo-usuario-palpite-input::placeholder {
     color: #9E9E9E;
     font-family: 'Roboto', sans-serif;
@@ -432,7 +276,6 @@ Roboto.
     width: 80px;
     height: 14px;
 }
-
 
 .conteudo-usuario-palpite-botao {
     width: 71px;
