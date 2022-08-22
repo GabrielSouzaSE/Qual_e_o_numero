@@ -22,11 +22,14 @@ async function myRequisition() {
         };
 
         divination.oninput = function () {
-            this.value = Math.abs(this.value);
+            this.value = this.value.replace(/[^0-9]/g, '');
+            this.value.length > 3 ? this.value = this.value.slice(0, 3) : console.log(this.value);
+            
+            // this.value = Math.abs(this.value);
 
-            if (this.value.length > 3) {
-                this.value = this.value.slice(0, 3);
-            }
+            // if (this.value.length > 3) {
+            //     this.value = this.value.slice(0, 3);
+            // }
         };
 
         document.body.querySelector('#divination').addEventListener('input', function () {
