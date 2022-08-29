@@ -234,7 +234,7 @@ body {
     height: 42px;
     border: none;
     transition-duration: 60s;
-    background: url(../img/btn.png);
+    background: url("../imagens/btn.png");
     background-size: cover;
 }
 
