@@ -12,7 +12,7 @@ async function myRequisition() {
 
         RequisitionData.value ? RequisitionData.value : statusErro(RequisitionData.value);
 
-        //console.log(RequisitionData.value);
+        console.log(RequisitionData.value);
 
         function fillZero(string, length) {
             for (let i = 0, l = length - string.length; i < l; i++) {
