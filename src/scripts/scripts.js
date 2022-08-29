@@ -24,7 +24,7 @@ async function myRequisition() {
         divination.oninput = function () {
             this.value = this.value.replace(/[^0-9]/g, '');
             this.value.length > 3 ? this.value = this.value.slice(0, 3) : console.log(this.value);
-            
+
             // this.value = Math.abs(this.value);
 
             // if (this.value.length > 3) {
@@ -37,6 +37,17 @@ async function myRequisition() {
 
             enableButton.disabled = this.value.length >= 1 ? false : true;
 
+        });
+
+        //         <input id="myInput" value="Some text..">
+        // <button id="myBtn" onclick="javascript:alert('Hello World!')">Button</button>
+
+        // var input = document.getElementById("myInput");
+        document.body.querySelector('#divination').addEventListener("keypress", function (event) {
+            if (event.key === "Enter") {
+                event.preventDefault();
+                document.getElementById("enviar").click();
+            }
         });
 
         document.getElementById('enviar').addEventListener("click", function (evento) {
